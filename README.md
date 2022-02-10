@@ -161,3 +161,41 @@ POST http://dev-nb-adsaccount-fapi-bigdata.internal.codefriend.top/adsaccount/cr
 | add_time    | timestamp | 添加时间  |
 | update_time | timestamp | 更新时间  |
 
+
+* 返回示例<br>
+`{`  
+`    "status": 0,`  
+`    "message": 'success',`  
+`    "groups": [`  
+`        {`  
+`            "count": 6006,`  
+`            "uniq_name": "1313044728836311",`  
+`            "data": [,`  
+`                {`  
+`                    "landing_page": "https://kayfei.shop/products/mirror-light",`  
+`                    "sku": "34tddsf"`  
+`                },`  
+`                {`  
+`                    "landing_page": "https://www.cornflower.store/products/clothing-organization-1",`  
+`                    "sku": "34tddsf"`  
+`                }`  
+`                ...`  
+`            ]`  
+`        },`  
+`        {`  
+`            "count": 3050,`  
+`            "uniq_name": "464275534406064",`  
+`            "data": [,`  
+`                {`  
+`                    "landing_page": "https://kayfei.shop/products/mirror-light",`  
+`                    "sku": "34tddsf"`  
+`                },`  
+`                {`  
+`                    "landing_page": "https://www.cornflower.store/products/clothing-organization-1",`  
+`                    "sku": "34tddsf"`  
+`                }`  
+`                ...`  
+`            ]`  
+`        }`  
+`    ]`  
+`}` 

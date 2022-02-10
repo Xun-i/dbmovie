@@ -104,50 +104,62 @@ POST http://dev-nb-adsaccount-fapi-bigdata.internal.codefriend.top/adsaccount/cr
 | | add_time| 添加时间| String| 是|
 | | update_time| 更新时间| String| 是|
 
-> * 请求实例<br>
-`{`  
-`    "limit_id": "0",`  
-`    "limit_count": "5",`  
-`    "order_by": {`  
-`             "by": "add_time",`  
-`             "sort": -1`  
-`    },`  
-`    "filter": {`  
-`            "relation": "and",`  
-`            "set": [`  
-`                {`  
-`                    "field": "account_id",`  
-`                    "op": "NIN",`  
-`                    "operator": "zeng",`  
-`                    "value": ["1000017467133164", "1000017467133187"]`  
-`                },`  
-`                {`  
-`                    "field": "add_time",`  
-`                    "op": "gte",`  
-`                    "value": "2022-02-10"`  
-`                }`  
-`            ]`  
-`     }`  
-`}`  
+* 请求实例<br>
+```
+{
+    "limit_id": "0",
+    "limit_count": "10",
+    "order_by": {
+        "by": "add_time",
+        "sort": "asc"
+    },
+    "filter": {
+        "relation": "and",
+        "set": [
+            {
+                "field": "account_id",
+                "op": "NIN",
+                "operator": "zeng",
+                "value": ["1000017467133164", "1000017467133187"]
+            },
+            {
+                "field": "add_time",
+                "op": "gte",
+                "value": "2022-02-10"
+            }
+        ]
+    }
+}
+```
 
 
-> 返回示例实例<br>
-`{`  
-`    "status": 0`  
-`    "message": "查询成功",`  
-`    "total": 3,`  
-`    "data": [`  
-`        {`  
-`            "account_id": "1000017467133178",`  
-`            "bm_id": "100101211428877",`  
-`            "credit_id": "21271142887",`  
-`            "person": "信用卡备注信息-test",`  
-`            "add_time": "2022-02-10 13:37:34",`  
-`            "update_time": "2022-02-10 17:20:38"`
-`         },` 
-`           ...`  
-`     ]`  
-`}`
+* 返回示例实例<br>
+```
+{
+    "status": 0,
+    "message": "查询成功",
+    "total": 3,
+    "data": [
+        {
+            "account_id": "1000017467133178",
+            "bm_id": "100101211428877",
+            "credit_id": "21271142887",
+            "person": "信用卡备注信息-test",
+            "add_time": "2022-02-10 13:37:34",
+            "update_time": "2022-02-10 17:20:38"
+        },
+        {
+            "account_id": "1000057917079008",
+            "bm_id": "100101211428877",
+            "credit_id": "21211428877",
+            "person": "信用卡备注信息-test",
+            "add_time": "2022-02-10 13:37:34",
+            "update_time": "2022-02-10 17:20:38"
+        },
+        ...
+    ]
+}
+```
 
 
 
@@ -163,4 +175,3 @@ POST http://dev-nb-adsaccount-fapi-bigdata.internal.codefriend.top/adsaccount/cr
 | remark       | float     | 信用卡备注信息      |
 | add_time    | timestamp | 添加时间  |
 | update_time | timestamp | 更新时间  |
-
